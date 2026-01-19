@@ -2,6 +2,10 @@ library 'github.com/archessmn/jenkins-library@main'
 
 pipeline {
     agent any
+    
+    options {
+        ansiColor('xterm')
+    }
 
     environment {
         CLOUDFLARE_API_TOKEN = credentials('cloudflare-api-token-archessmn-dns')
