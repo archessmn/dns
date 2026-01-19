@@ -13,7 +13,7 @@ pipeline {
         stage('Check Formatting') {
             steps {
                 script {
-                    sh(script: "tofu fmt -check")
+                    nixSh(script: "tofu fmt -check")
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
         stage('Init') {
             steps {
                 script {
-                    sh(script: "tofu init")
+                    nixSh(script: "tofu init")
                 }
             }
         }
@@ -36,7 +36,7 @@ pipeline {
 
             steps {
                 script {
-                    sh(script: "tofu plan")
+                    nixSh(script: "tofu plan")
                 }
             }
         }
@@ -48,7 +48,7 @@ pipeline {
 
             steps {
                 script {
-                    sh(script: "tofu apply -auto-approve")
+                    nixSh(script: "tofu apply -auto-approve")
                 }
             }
         }
