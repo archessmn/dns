@@ -4,7 +4,7 @@ pipeline {
     agent any
 
     environment {
-        CLOUDFLARE_API_TOKEN = credentials('cloudflare-api-token-ystv-dns')
+        CLOUDFLARE_API_TOKEN = credentials('cloudflare-api-token-archessmn-dns')
     }
 
     stages {
