@@ -11,7 +11,7 @@ pipeline {
         stage('Check Formatting') {
             steps {
                 script {
-                    sh(script: "nix flake show")
+                    sh "nix flake show"
                     def system = sh(
                         script: 'nix config show system',
                         returnStdout: true
