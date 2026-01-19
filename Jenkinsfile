@@ -1,9 +1,7 @@
 library 'github.com/archessmn/jenkins-library@main'
 
 pipeline {
-    agent {
-        node 'nomad'
-    }
+    agent any
 
     environment {
         CLOUDFLARE_API_TOKEN = credentials('cloudflare-api-token-ystv-dns')
