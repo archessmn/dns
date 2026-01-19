@@ -11,6 +11,11 @@ pipeline {
         stage('Check Formatting') {
             steps {
                 script {
+                    def system = sh(
+                        script: 'nix config show system',
+                        returnStdout: true
+                    ).trim()
+                    sh(script: "nix shell .#devShells.${system}.default --command tofu version")
                     nixSh(script: "tofu fmt -check")
                 }
             }

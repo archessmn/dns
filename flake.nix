@@ -22,7 +22,7 @@
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             opentofu
-            terraform-providers.cloudflare
+            terraform-providers.cloudflare_cloudflare
             cf-terraforming
           ];
         };
