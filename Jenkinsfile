@@ -5,6 +5,7 @@ pipeline {
 
     environment {
         CLOUDFLARE_API_TOKEN = credentials('cloudflare-api-token-archessmn-dns')
+        PATH="/run/current-system/sw/bin"
     }
 
     stages {
@@ -12,11 +13,6 @@ pipeline {
             steps {
                 script {
                     sh "nix flake show"
-                    def system = sh(
-                        script: 'nix config show system',
-                        returnStdout: true
-                    ).trim()
-                    sh(script: "nix shell .#devShells.${system}.default --command tofu version")
                     nixSh(script: "tofu fmt -check")
                 }
             }
