@@ -64,14 +64,6 @@ locals {
         name    = "_acme-challenge.node-1.moir.xyz"
         content = "\"qXPGTpARvG5SAwGtFWS9Vyi0FYucJ5zfvNKAzdHohVY\""
       }
-      xyz_moir__domainkey_default = {
-        name    = "default._domainkey.moir.xyz"
-        content = "\"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvD58trLk35t4vV+hsg8pUioN4YU8LQPJOVSt5e1W9A5rhDBA+SfqI99Dfq42UmAyU8f0V8KrnvssTnPiqXe6+ghdh5DdqtmQeyVAmbhqHQfiD4iZseZ8EAGkR3Or4TnQM/XPRPMoWSxge+TD3GU+Nhmx39APAN3YeMME7VcebDzIytzWOgNAQloL87U2471M3IPyovgZGzG9MD10+7TIi8LilhXvvnumhTjaYcDl7FW2MD83vPV1qtXFW6OG5jqJ3/d3sob7AQS/iV18EV/SG2dxvuXCShMkHAtzKB8OIEO3JpUn7/pFE+28x11WCFi1Ewll8CjPVDlZvalYhMCKiQIDAQAB;\""
-      }
-      xyz_moir = {
-        name    = "moir.xyz"
-        content = "\"v=spf1 +mx +a +ip4:116.202.134.139 ~all\""
-      }
     }
   }
 }
