@@ -5,7 +5,7 @@ locals {
     cname = {
       net_theshrine_dev_wildcard = {
         name    = "*.dev.theshrine.net"
-        content = "host.moir.xyz"
+        content = "temjin.infra.archess.mn"
       }
       net_theshrine__domainkey_sig1 = {
         name    = "sig1._domainkey.theshrine.net"

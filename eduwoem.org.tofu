@@ -4,20 +4,20 @@ locals {
   org_eduwoem_records = {
     cname = {
       org_eduwoem_dev_wildcard = {
-        content = "eduwoem.org"
         name    = "*.dev.eduwoem.org"
+        content = "eduwoem.org"
       }
       org_eduwoem_wildcard = {
-        content = "eduwoem.org"
         name    = "*.eduwoem.org"
+        content = "eduwoem.org"
       }
       org_eduwoem = {
-        content = "host.moir.xyz"
         name    = "eduwoem.org"
+        content = "temjin.infra.archess.mn"
       }
       org_eduwoem__domainkey_sig1 = {
-        content = "sig1.dkim.eduwoem.org.at.icloudmailadmin.com"
         name    = "sig1._domainkey.eduwoem.org"
+        content = "sig1.dkim.eduwoem.org.at.icloudmailadmin.com"
       }
     }
 
@@ -34,27 +34,7 @@ locals {
       }
     }
 
-    srv = {
-      org_eduwoem__tcp__minecraft = {
-        name = "_minecraft._tcp.eduwoem.org"
-        data = {
-          port     = 25565
-          priority = 0
-          target   = "host.moir.xyz"
-          weight   = 0
-        }
-      }
-
-      org_eduwoem_yapp__tcp__minecraft = {
-        name = "_minecraft._tcp.yapp.eduwoem.org"
-        data = {
-          port     = 25503
-          priority = 0
-          target   = "host.moir.xyz"
-          weight   = 0
-        }
-      }
-    }
+    srv = {}
 
     txt = {
       org_eduwoem__dmarc = {

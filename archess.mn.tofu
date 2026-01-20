@@ -43,9 +43,9 @@ locals {
     cname = {
       mn_archess_wildcard = {
         name    = "*.archess.mn"
-        content = "moir.xyz"
+        content = "temjin.infra.archess.mn"
       }
-      mn_archess_ = {
+      mn_archess = {
         name    = "archess.mn"
         content = "archessmn.github.io"
       }
@@ -55,7 +55,7 @@ locals {
       }
       mn_archess_minio_console = {
         name    = "console.minio.archess.mn"
-        content = "host.moir.xyz"
+        content = "temjin.infra.archess.mn"
       }
       mn_archess_idm = {
         name    = "idm.archess.mn"
@@ -65,25 +65,9 @@ locals {
         name    = "jenkins.zenith.infra.archess.mn"
         content = "tsuro.infra.archess.mn"
       }
-      mn_archess_kasm = {
-        name    = "kasm.archess.mn"
-        content = "host.moir.xyz"
-      }
-      mn_archess_meet = {
-        name    = "meet.archess.mn"
-        content = "host.moir.xyz"
-      }
-      mn_archess_minio = {
-        name    = "minio.archess.mn"
-        content = "host.moir.xyz"
-      }
       mn_archess_infra_atlas_pve = {
         name    = "pve.atlas.infra.archess.mn"
         content = "tsuro.infra.archess.mn"
-      }
-      mn_archess_sheets = {
-        name    = "sheets.archess.mn"
-        content = "host.moir.xyz"
       }
       mn_archess__domainkey_sig1 = {
         name    = "sig1._domainkey.archess.mn"

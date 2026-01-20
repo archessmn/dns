@@ -2,44 +2,14 @@ locals {
   xyz_moir_zone_id = "9dd1263c0b1bda5a8d379c457da68fc3"
 
   xyz_moir_records = {
-    a = {
-      xyz_moir_host = {
-        name    = "host.moir.xyz"
-        content = "147.12.146.29"
-      }
-      xyz_moir = {
-        name    = "moir.xyz"
-        content = "147.12.146.29"
-      }
-    }
+    a = {}
 
-    aaaa = {
-      xyz_moir_host = {
-        name    = "host.moir.xyz"
-        content = "2a02:6b67:e841:4900::10"
-      }
-      xyz_moir = {
-        name    = "moir.xyz"
-        content = "2a02:6b67:e841:4900::10"
-      }
-    }
+    aaaa = {}
 
     cname = {
-      xyz_moir_immich = {
-        name    = "immich.moir.xyz"
-        content = "host.moir.xyz"
-      }
-      xyz_moir_play_map = {
-        name    = "map.play.moir.xyz"
-        content = "host.moir.xyz"
-      }
       xyz_moir_wildcard = {
         name    = "*.moir.xyz"
         content = "temjin.infra.archess.mn"
-      }
-      xyz_moir_node-1 = {
-        name    = "node-1.moir.xyz"
-        content = "host.moir.xyz"
       }
       xyz_moir_vault = {
         name    = "vault.moir.xyz"
@@ -47,17 +17,7 @@ locals {
       }
     }
 
-    srv = {
-      xyz_moir_play_uni__tcp__minecraft = {
-        name = "_minecraft._tcp.uni.play.moir.xyz"
-        data = {
-          port     = 25507
-          priority = 0
-          target   = "node-1.moir.xyz"
-          weight   = 0
-        }
-      }
-    }
+    srv = {}
 
     txt = {
       xyz_moir_node-1__acme-challenge = {
