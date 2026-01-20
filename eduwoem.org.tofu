@@ -1,7 +1,7 @@
 locals {
-  zone_id = "fbb0d324d677c263c484a1fadf865b20"
+  org_eduwoem_zone_id = "fbb0d324d677c263c484a1fadf865b20"
 
-  records = {
+  org_eduwoem_records = {
     cname = {
       org_eduwoem_dev_wildcard = {
         content = "eduwoem.org"
@@ -78,7 +78,7 @@ locals {
 }
 
 resource "cloudflare_dns_record" "org_eduwoem_records_cname" {
-  for_each = local.records.cname
+  for_each = local.org_eduwoem_records.cname
 
   name    = each.value.name
   content = each.value.content
@@ -86,13 +86,13 @@ resource "cloudflare_dns_record" "org_eduwoem_records_cname" {
   proxied  = false
   ttl      = 1
   type     = "CNAME"
-  zone_id  = local.zone_id
+  zone_id  = local.org_eduwoem_zone_id
   settings = {}
   comment  = var.dns_record_comment
 }
 
 resource "cloudflare_dns_record" "org_eduwoem_records_mx" {
-  for_each = local.records.mx
+  for_each = local.org_eduwoem_records.mx
 
   name     = each.value.name
   content  = each.value.content
@@ -101,13 +101,13 @@ resource "cloudflare_dns_record" "org_eduwoem_records_mx" {
   proxied  = false
   ttl      = 3600
   type     = "MX"
-  zone_id  = local.zone_id
+  zone_id  = local.org_eduwoem_zone_id
   settings = {}
   comment  = var.dns_record_comment
 }
 
 resource "cloudflare_dns_record" "org_eduwoem_records_srv" {
-  for_each = local.records.srv
+  for_each = local.org_eduwoem_records.srv
 
   name     = each.value.name
   priority = 0
@@ -115,14 +115,14 @@ resource "cloudflare_dns_record" "org_eduwoem_records_srv" {
   tags     = []
   ttl      = 1
   type     = "SRV"
-  zone_id  = local.zone_id
+  zone_id  = local.org_eduwoem_zone_id
   data     = each.value.data
   settings = {}
   comment  = var.dns_record_comment
 }
 
 resource "cloudflare_dns_record" "org_eduwoem_records_txt" {
-  for_each = local.records.txt
+  for_each = local.org_eduwoem_records.txt
 
   name     = each.value.name
   content  = each.value.content
@@ -130,7 +130,7 @@ resource "cloudflare_dns_record" "org_eduwoem_records_txt" {
   tags     = []
   ttl      = try(each.value.ttl, 1)
   type     = "TXT"
-  zone_id  = local.zone_id
+  zone_id  = local.org_eduwoem_zone_id
   settings = {}
   comment  = var.dns_record_comment
 }
