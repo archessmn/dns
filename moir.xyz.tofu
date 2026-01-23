@@ -19,12 +19,7 @@ locals {
 
     srv = {}
 
-    txt = {
-      xyz_moir_node-1__acme-challenge = {
-        name    = "_acme-challenge.node-1.moir.xyz"
-        content = "\"qXPGTpARvG5SAwGtFWS9Vyi0FYucJ5zfvNKAzdHohVY\""
-      }
-    }
+    txt = {}
   }
 }
 
