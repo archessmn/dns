@@ -15,11 +15,92 @@ locals {
         name    = "vault.moir.xyz"
         content = "tsuro.infra.archess.mn"
       }
+
+      xyz_moir_autoconfig = {
+        name    = "autoconfig.moir.xyz"
+        content = "autoconfig.migadu.com"
+      }
+      xyz_moir__domainkey_key1 = {
+        name    = "key1._domainkey.moir.xyz"
+        content = "key1.moir.xyz._domainkey.migadu.com"
+      }
+      xyz_moir__domainkey_key2 = {
+        name    = "key2._domainkey.moir.xyz"
+        content = "key2.moir.xyz._domainkey.migadu.com"
+      }
+      xyz_moir__domainkey_key3 = {
+        name    = "key3._domainkey.moir.xyz"
+        content = "key3.moir.xyz._domainkey.migadu.com"
+      }
     }
 
-    srv = {}
+    mx = {
+      xyz_moir_1 = {
+        name     = "moir.xyz"
+        content  = "aspmx1.migadu.com"
+        priority = 10
+      }
+      xyz_moir_wildcard_1 = {
+        name     = "*.moir.xyz"
+        content  = "aspmx1.migadu.com"
+        priority = 10
+      }
+      xyz_moir_2 = {
+        name     = "moir.xyz"
+        content  = "aspmx2.migadu.com"
+        priority = 20
+      }
+      xyz_moir_wildcard_2 = {
+        name     = "*.moir.xyz"
+        content  = "aspmx2.migadu.com"
+        priority = 20
+      }
+    }
 
-    txt = {}
+    srv = {
+      xyz_moir__tcp__submissions = {
+        name = "_submissions._tcp.moir.xyz"
+        data = {
+          port     = 465
+          priority = 0
+          weight   = 0
+          target   = "smtp.migadu.com"
+        }
+      }
+      xyz_moir__tcp__imaps = {
+        name = "_imaps._tcp.moir.xyz"
+        data = {
+          port     = 993
+          priority = 0
+          weight   = 0
+          target   = "imap.migadu.com"
+        }
+      }
+      xyz_moir__tcp__pop3s = {
+        name = "_pop3s._tcp.moir.xyz"
+        data = {
+          port     = 995
+          priority = 0
+          weight   = 0
+          target   = "pop.migadu.com"
+        }
+      }
+    }
+
+    txt = {
+      xyz_moir_migadu = {
+        name    = "moir.xyz"
+        content = "\"hosted-email-verify=rsw3fxij\""
+      }
+      xyz_moir_spf = {
+        name    = "moir.xyz"
+        content = "\"v=spf1 include:spf.migadu.com -all\""
+      }
+      xyz_moir_dmarc = {
+        name    = "_dmarc.moir.xyz"
+        content = "\"v=DMARC1; p=quarantine;\""
+      }
+    }
   }
 }
 
@@ -64,6 +145,21 @@ resource "cloudflare_dns_record" "xyz_moir_records_cname" {
   tags     = []
   ttl      = 1
   type     = "CNAME"
+  zone_id  = local.xyz_moir_zone_id
+  settings = {}
+  comment  = var.dns_record_comment
+}
+
+resource "cloudflare_dns_record" "xyz_moir_records_mx" {
+  for_each = local.xyz_moir_records.mx
+
+  name     = each.value.name
+  content  = each.value.content
+  priority = each.value.priority
+
+  proxied  = false
+  ttl      = 3600
+  type     = "MX"
   zone_id  = local.xyz_moir_zone_id
   settings = {}
   comment  = var.dns_record_comment
