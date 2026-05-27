@@ -10,6 +10,7 @@ The records are declared in the `.tofu` files named after each domain:
 - `eduwoem.org.tofu`
 - `moir.xyz.tofu`
 - `theshrine.net.tofu`
+- `ury-with.buzz.tofu`
 
 The two files `main.tf` and `variables.tf` are used for various other bits of configuration. There's also a nix flake because why not.
 
