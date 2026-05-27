@@ -16,7 +16,6 @@ pipeline {
         stage('Check Formatting') {
             steps {
                 script {
-                    sh "nix flake show"
                     nixSh(script: "tofu fmt -check")
                 }
             }
