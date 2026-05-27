@@ -4,7 +4,7 @@ locals {
   buzz_ury-with_records = {
     cname = {
       buzz_ury-with = {
-        name    = "theshrine.net"
+        name    = "ury-with.buzz"
         content = "temjin.infra.archess.mn"
       }
     }
