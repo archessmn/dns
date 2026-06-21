@@ -34,7 +34,17 @@ locals {
       }
     }
 
-    srv = {}
+    srv = {
+      org_eduwoem_gay__tcp__minecraft = {
+        name = "_minecraft._tcp.gay.eduwoem.org"
+        data = {
+          port     = 25565
+          priority = 0
+          weight   = 0
+          target   = "temjin.infra.archess.mn"
+        }
+      }
+    }
 
     txt = {
       org_eduwoem__dmarc = {
