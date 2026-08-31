@@ -1,3 +1,5 @@
 .direnv/
 .terraform/
 generated/
+
+.env

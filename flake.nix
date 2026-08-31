@@ -23,6 +23,7 @@
           packages = with pkgs; [
             opentofu
             terraform-providers.cloudflare_cloudflare
+            terraform-providers.archessmn_powerdns
             cf-terraforming
           ];
         };

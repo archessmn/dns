@@ -11,7 +11,14 @@ terraform {
       source  = "cloudflare/cloudflare"
       version = "~> 5"
     }
+
+    powerdns = {
+      source  = "archessmn/powerdns"
+      version = "~> 1.0.6"
+    }
   }
 }
 
 provider "cloudflare" {}
+
+provider "powerdns" {}
