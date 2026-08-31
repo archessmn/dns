@@ -9,6 +9,7 @@ provider "registry.opentofu.org/archessmn/powerdns" {
     "h1:Omx7qAg9X/9YEzDAo3md7HLe+0rqtm9g4L/VtGQKU8Q=",
     "h1:WFLU39eT+8Z33EgSYNr6VSk5V7DLVcBorLDoHD0YiR8=",
     "h1:WLOe0Mrv7sh5drz3Mr+KVybmL4TWyv5Ow0S+DvTXxZQ=",
+    "h1:dkiXnzjZ1Wh4Rye90Yfjdkg/uXCnSpR1KpauibwKf+c=",
     "h1:l/1c+u51fsFNft4YNG4UQH/TJGDu2ML/ankPtnEWdt4=",
     "h1:oZHUZVhZNILFld+FGfRe1EMeknH2jtWHcc0b4pfo+oE=",
     "h1:pgyicRd9samM0s70AoNiyrdKhMU85TCbSYr/wVl2+0Q=",
@@ -33,12 +34,12 @@ provider "registry.opentofu.org/archessmn/powerdns" {
 provider "registry.opentofu.org/cloudflare/cloudflare" {
   version = "5.23.0"
   hashes = [
-    "h1:0dj4i7vbDYqHas6GNpfIi8/2vh1ZFgI9DzrNcGyWQjk=",
     "h1:AHGT3iXr4NMNymUXeRXu3WcKIVUbvHKpYRUbdgiQv/4=",
     "h1:C6JU7d5XoRQnksREiFD3hTgGRQ18ciV7ynKvpvGIteA=",
     "h1:LeM+28HS6S95Ab9xxG7GoLTrE9k9Q0GoJ3mjG2rVbMI=",
     "h1:Sixlatj4vbZGhJ9r7I5c0l4gWp5Bej0aNR3akDt7wig=",
     "h1:UfdcqA0fWnAbuDsV4hx8/xeAfyVKmjJYyXGFawHLldc=",
+    "h1:XGcps6HeA65hw8ZGbQzmaxNOB4iInqYwkKGR6hTrvFQ=",
     "h1:cvzir6P1UJ+IBTLlXNg57K6ojEB2+dQDa6ZK1f6eKuQ=",
     "h1:imUBweQvKLcFlE+TjpiwjNg6OlSoyLlAe5LuP5x13kk=",
     "h1:s3+LfSvj6fOzcXKjsOQEHg6MmHMuZDBXNNQ+7z4JAF4=",
