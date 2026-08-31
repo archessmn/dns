@@ -8,13 +8,13 @@ terraform {
 
   required_providers {
     cloudflare = {
-      source  = "cloudflare/cloudflare"
-      version = "~> 5"
+      source = "cloudflare/cloudflare"
+      # version = "~> 5"
     }
 
     powerdns = {
-      source  = "archessmn/powerdns"
-      version = "~> 1.0.6"
+      source = "archessmn/powerdns"
+      # version = "~> 1.0.6"
     }
   }
 }

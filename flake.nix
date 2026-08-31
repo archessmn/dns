@@ -21,9 +21,10 @@
       {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
-            opentofu
-            terraform-providers.cloudflare_cloudflare
-            terraform-providers.archessmn_powerdns
+            (opentofu.withPlugins (p: [
+              p.cloudflare_cloudflare
+              p.archessmn_powerdns
+            ]))
             cf-terraforming
           ];
         };
