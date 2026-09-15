@@ -57,16 +57,12 @@ locals {
         content = "\"v=DMARC1; p=none; rua=mailto:fa67c3c4d8754524827f8a9a4108750e@dmarc-reports.cloudflare.net\""
       }
 
-      org_eduwoem_1 = {
-        name    = "eduwoem.org."
-        content = "\"apple-domain=17czukQ6Hq8O8qmq\""
-        ttl     = 3600
-      }
-
-      org_eduwoem_2 = {
-        name    = "eduwoem.org."
-        content = "\"v=spf1 include:icloud.com ~all\""
-        ttl     = 3600
+      org_eduwoem = {
+        name = "eduwoem.org."
+        records = [
+          "\"apple-domain=17czukQ6Hq8O8qmq\"",
+          "\"v=spf1 include:icloud.com ~all\""
+        ]
       }
     }
   }
@@ -122,7 +118,7 @@ resource "powerdns_record" "org_eduwoem_records_txt" {
   for_each = local.org_eduwoem_records.txt
 
   name    = each.value.name
-  records = [each.value.content]
+  records = each.value.records
 
   ttl  = 3600
   type = "TXT"
