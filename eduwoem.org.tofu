@@ -5,21 +5,21 @@ locals {
     alias = {
       org_eduwoem = {
         name    = "eduwoem.org."
-        content = "temjin.infra.archess.mn"
+        content = "temjin.infra.archess.mn."
       }
     }
     cname = {
       org_eduwoem_dev_wildcard = {
         name    = "*.dev.eduwoem.org."
-        content = "eduwoem.org"
+        content = "eduwoem.org."
       }
       org_eduwoem_wildcard = {
         name    = "*.eduwoem.org."
-        content = "eduwoem.org"
+        content = "eduwoem.org."
       }
       org_eduwoem__domainkey_sig1 = {
         name    = "sig1._domainkey.eduwoem.org."
-        content = "sig1.dkim.eduwoem.org.at.icloudmailadmin.com"
+        content = "sig1.dkim.eduwoem.org.at.icloudmailadmin.com."
       }
     }
 
@@ -28,11 +28,11 @@ locals {
         name = "eduwoem.org."
         records = [
           {
-            server   = "mx01.mail.icloud.com"
+            server   = "mx01.mail.icloud.com."
             priority = 10
           },
           {
-            server   = "mx02.mail.icloud.com"
+            server   = "mx02.mail.icloud.com."
             priority = 10
           }
         ]
@@ -46,7 +46,7 @@ locals {
           port     = 25565
           priority = 0
           weight   = 0
-          target   = "temjin.infra.archess.mn"
+          target   = "temjin.infra.archess.mn."
         }
       }
     }
