@@ -1,7 +1,13 @@
 locals {
-  org_eduwoem_zone_id = "fbb0d324d677c263c484a1fadf865b20"
+  org_eduwoem_zone_id = "eduwoem.org."
 
   org_eduwoem_records = {
+    alias = {
+      org_eduwoem = {
+        name    = "eduwoem.org"
+        content = "temjin.infra.archess.mn"
+      }
+    }
     cname = {
       org_eduwoem_dev_wildcard = {
         name    = "*.dev.eduwoem.org"
@@ -11,10 +17,6 @@ locals {
         name    = "*.eduwoem.org"
         content = "eduwoem.org"
       }
-      org_eduwoem = {
-        name    = "eduwoem.org"
-        content = "temjin.infra.archess.mn"
-      }
       org_eduwoem__domainkey_sig1 = {
         name    = "sig1._domainkey.eduwoem.org"
         content = "sig1.dkim.eduwoem.org.at.icloudmailadmin.com"
@@ -22,15 +24,18 @@ locals {
     }
 
     mx = {
-      org_eduwoem_1 = {
-        content  = "mx01.mail.icloud.com"
-        name     = "eduwoem.org"
-        priority = 10
-      }
-      org_eduwoem_2 = {
-        content  = "mx02.mail.icloud.com"
-        name     = "eduwoem.org"
-        priority = 10
+      org_eduwoem = {
+        name = "eduwoem.org."
+        records = [
+          {
+            server   = "mx01.mail.icloud.com"
+            priority = 10
+          },
+          {
+            server   = "mx02.mail.icloud.com"
+            priority = 10
+          }
+        ]
       }
     }
 
@@ -67,60 +72,59 @@ locals {
   }
 }
 
-resource "cloudflare_dns_record" "org_eduwoem_records_cname" {
-  for_each = local.org_eduwoem_records.cname
+resource "powerdns_record" "org_eduwoem_records_alias" {
+  for_each = local.org_eduwoem_records.alias
+
+  zone = local.org_eduwoem_zone_id
 
   name    = each.value.name
-  content = each.value.content
+  records = [each.value.content]
 
-  proxied  = false
-  ttl      = 1
-  type     = "CNAME"
-  zone_id  = local.org_eduwoem_zone_id
-  settings = {}
-  comment  = var.dns_record_comment
+  type = "ALIAS"
+  ttl  = 3600
 }
 
-resource "cloudflare_dns_record" "org_eduwoem_records_mx" {
+resource "powerdns_record" "org_eduwoem_records_cname" {
+  for_each = local.org_eduwoem_records.cname
+
+  zone = local.org_eduwoem_zone_id
+
+  name    = each.value.name
+  records = [each.value.content]
+
+  type = "CNAME"
+  ttl  = 3600
+}
+
+resource "powerdns_record" "org_eduwoem_records_mx" {
   for_each = local.org_eduwoem_records.mx
 
-  name     = each.value.name
-  content  = each.value.content
-  priority = each.value.priority
+  name    = each.value.name
+  records = [for i, v in each.value.records : "${v.priority} ${v.server}"]
 
-  proxied  = false
-  ttl      = 3600
-  type     = "MX"
-  zone_id  = local.org_eduwoem_zone_id
-  settings = {}
-  comment  = var.dns_record_comment
+  ttl  = 3600
+  type = "MX"
+  zone = local.org_eduwoem_zone_id
 }
 
-resource "cloudflare_dns_record" "org_eduwoem_records_srv" {
+resource "powerdns_record" "org_eduwoem_records_srv" {
   for_each = local.org_eduwoem_records.srv
 
-  name     = each.value.name
-  priority = 0
-  proxied  = false
-  tags     = []
-  ttl      = 1
-  type     = "SRV"
-  zone_id  = local.org_eduwoem_zone_id
-  data     = each.value.data
-  settings = {}
-  comment  = var.dns_record_comment
+  name    = each.value.name
+  records = ["${each.value.data.priority} ${each.value.data.weight} ${each.value.data.port} ${each.value.data.target}"]
+
+  ttl  = 60
+  type = "SRV"
+  zone = local.org_eduwoem_zone_id
 }
 
-resource "cloudflare_dns_record" "org_eduwoem_records_txt" {
+resource "powerdns_record" "org_eduwoem_records_txt" {
   for_each = local.org_eduwoem_records.txt
 
-  name     = each.value.name
-  content  = each.value.content
-  proxied  = false
-  tags     = []
-  ttl      = try(each.value.ttl, 1)
-  type     = "TXT"
-  zone_id  = local.org_eduwoem_zone_id
-  settings = {}
-  comment  = var.dns_record_comment
+  name    = each.value.name
+  records = [each.value.content]
+
+  ttl  = 3600
+  type = "TXT"
+  zone = local.org_eduwoem_zone_id
 }
