@@ -4,21 +4,21 @@ locals {
   org_eduwoem_records = {
     alias = {
       org_eduwoem = {
-        name    = "eduwoem.org"
+        name    = "eduwoem.org."
         content = "temjin.infra.archess.mn"
       }
     }
     cname = {
       org_eduwoem_dev_wildcard = {
-        name    = "*.dev.eduwoem.org"
+        name    = "*.dev.eduwoem.org."
         content = "eduwoem.org"
       }
       org_eduwoem_wildcard = {
-        name    = "*.eduwoem.org"
+        name    = "*.eduwoem.org."
         content = "eduwoem.org"
       }
       org_eduwoem__domainkey_sig1 = {
-        name    = "sig1._domainkey.eduwoem.org"
+        name    = "sig1._domainkey.eduwoem.org."
         content = "sig1.dkim.eduwoem.org.at.icloudmailadmin.com"
       }
     }
@@ -41,7 +41,7 @@ locals {
 
     srv = {
       org_eduwoem_gay__tcp__minecraft = {
-        name = "_minecraft._tcp.gay.eduwoem.org"
+        name = "_minecraft._tcp.gay.eduwoem.org."
         data = {
           port     = 25565
           priority = 0
@@ -53,18 +53,18 @@ locals {
 
     txt = {
       org_eduwoem__dmarc = {
-        name    = "_dmarc.eduwoem.org"
+        name    = "_dmarc.eduwoem.org."
         content = "\"v=DMARC1; p=none; rua=mailto:fa67c3c4d8754524827f8a9a4108750e@dmarc-reports.cloudflare.net\""
       }
 
       org_eduwoem_1 = {
-        name    = "eduwoem.org"
+        name    = "eduwoem.org."
         content = "\"apple-domain=17czukQ6Hq8O8qmq\""
         ttl     = 3600
       }
 
       org_eduwoem_2 = {
-        name    = "eduwoem.org"
+        name    = "eduwoem.org."
         content = "\"v=spf1 include:icloud.com ~all\""
         ttl     = 3600
       }
