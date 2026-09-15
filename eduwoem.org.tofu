@@ -58,7 +58,7 @@ locals {
 
     txt = {
       org_eduwoem__dmarc = {
-        name    = "_dmarc.eduwoem.org."
+        name = "_dmarc.eduwoem.org."
         records = [
           "\"v=DMARC1; p=none; rua=mailto:fa67c3c4d8754524827f8a9a4108750e@dmarc-reports.cloudflare.net\""
         ]
