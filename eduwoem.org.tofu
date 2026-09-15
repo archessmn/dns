@@ -7,6 +7,11 @@ locals {
         name    = "eduwoem.org."
         content = "temjin.infra.archess.mn."
       }
+
+      org_eduwoem_git = {
+        name    = "git.eduwoem.org."
+        content = "amy.net.isnt-a.top."
+      }
     }
     cname = {
       org_eduwoem_dev_wildcard = {
