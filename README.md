@@ -7,7 +7,6 @@ This repository contains [OpenTofu](https://opentofu.org) configurations for my 
 The records are declared in the `.tofu` files named after each domain:
 
 - `archess.mn.tofu`
-- `eduwoem.org.tofu`
 - `moir.xyz.tofu`
 - `theshrine.net.tofu`
 - `ury-with.buzz.tofu`
