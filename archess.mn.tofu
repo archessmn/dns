@@ -24,7 +24,7 @@ locals {
     aaaa = {
       mn_archess_infra_temjin = {
         name    = "temjin.infra.archess.mn"
-        content = "2a02:6b67:e841:4900::10"
+        content = "2a02:6b67:e840:500::10"
       }
       mn_archess_infra_tsuro = {
         name    = "tsuro.infra.archess.mn"
@@ -32,7 +32,7 @@ locals {
       }
       mn_archess_infra_temjin_v6 = {
         name    = "v6.temjin.infra.archess.mn"
-        content = "2a02:6b67:e841:4900::10"
+        content = "2a02:6b67:e840:500::10"
       }
       mn_archess_infra_tsuro_v6 = {
         name    = "v6.tsuro.infra.archess.mn"
