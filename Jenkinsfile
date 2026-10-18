@@ -11,7 +11,7 @@ pipeline {
         CLOUDFLARE_API_TOKEN = credentials('cloudflare-api-token-archessmn-dns')
         PDNS_API_KEY = credentials('servfail-api-token-archessmn')
         PDNS_SERVER_URL = "beta.servfail.network"
-        PDNS_NAMESERVER = "miyuki.sakamoto.pl."
+        PDNS_NAMESERVER = "neri.ns.servfail.ch."
         PATH="/run/current-system/sw/bin"
     }
 
