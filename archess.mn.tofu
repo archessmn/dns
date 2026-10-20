@@ -49,6 +49,10 @@ locals {
         name    = "archess.mn"
         content = "archessmn.github.io"
       }
+      mn_archess_www = {
+        name    = "www.archess.mn"
+        content = "archessmn.github.io"
+      }
       mn_archess_beszel = {
         name    = "beszel.archess.mn"
         content = "tsuro.infra.archess.mn"
