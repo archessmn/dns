@@ -47,11 +47,7 @@ locals {
       }
       mn_archess = {
         name    = "archess.mn"
-        content = "archessmn.github.io"
-      }
-      mn_archess_www = {
-        name    = "www.archess.mn"
-        content = "archessmn.github.io"
+        content = "temjin.infra.archess.mn"
       }
       mn_archess_beszel = {
         name    = "beszel.archess.mn"
