@@ -47,11 +47,11 @@ locals {
       }
       mn_archess = {
         name    = "archess.mn"
-        content = "codeberg.page"
+        content = "archessmn.github.io"
       }
       mn_archess_www = {
         name    = "www.archess.mn"
-        content = "codeberg.page"
+        content = "archessmn.github.io"
       }
       mn_archess_beszel = {
         name    = "beszel.archess.mn"
